@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 import dynamic from "next/dynamic";
 
@@ -12,6 +13,8 @@ const DynamicComponentWithNoSSR = dynamic(() => import("@/Confetti"), {
 });
 
 const Home: NextPage = () => {
+  const [isTiitleNotationActive, setIsTiitleNotationActive] =
+    React.useState(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +25,16 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <DynamicComponentWithNoSSR />
-        <h1 className={styles.title}>Welcome to Confetti Wesbite</h1>
+
+        <RoughNotation type="underline" show={isTiitleNotationActive}>
+          <h1
+            className={styles.title}
+            onMouseEnter={() => setIsTiitleNotationActive(true)}
+            // onMouseLeave={() => setIsTiitleNotationActive(false)}
+          >
+            Welcome to Confetti Wesbite
+          </h1>
+        </RoughNotation>
 
         {/* <p className={styles.description}>
           Get started by editing{" "}
