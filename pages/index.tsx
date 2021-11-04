@@ -1,11 +1,10 @@
 import type { NextPage } from "next";
 import React from "react";
 import Head from "next/head";
-import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import { RoughNotation } from "react-rough-notation";
 
 import dynamic from "next/dynamic";
 
-import styles from "@/styles/Home.module.css";
 import Footer from "@/components/Footer";
 
 const DynamicComponentWithNoSSR = dynamic(() => import("@/Confetti"), {
@@ -13,49 +12,49 @@ const DynamicComponentWithNoSSR = dynamic(() => import("@/Confetti"), {
 });
 
 const Home: NextPage = () => {
-  const [isTiitleNotationActive, setIsTiitleNotationActive] =
+  const [isTitleNotationActive, setisTitleNotationActive] =
     React.useState(false);
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Confetti Website 🎊</title>
         <meta name="description" content="Website with cool Confetti 🎊" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <DynamicComponentWithNoSSR />
+      <div className="flex flex-col items-center justify-center min-h-screen py-2">
+      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
+          <DynamicComponentWithNoSSR />
 
-        <RoughNotation type="underline" show={isTiitleNotationActive}>
-          <h1
-            className={styles.title}
-            onMouseEnter={() => setIsTiitleNotationActive(true)}
-            // onMouseLeave={() => setIsTiitleNotationActive(false)}
-          >
-            Welcome to Confetti Wesbite
-          </h1>
-        </RoughNotation>
+          <RoughNotation type="underline" show={isTitleNotationActive}>
+            <h1
+              className="text-4xl lg:text-6xl font-bold"
+              onMouseEnter={() => setisTitleNotationActive(true)}
+              // onMouseLeave={() => setisTitleNotationActive(false)}
+            >
+              Welcome to <span  className="text-blue-600">Confetti</span> Wesbite
+            </h1>
+          </RoughNotation>
 
-        {/* <p className={styles.description}>
+          {/* <p className={styles.description}>
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p> */}
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6  sm:w-full">
+            <a href="https://github.com/alphaolomi/nextjs-confetti" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
+              <h2>Opensource &rarr;</h2>
+              <p>Find source code for this site.</p>
+            </a>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-        </div>
-      </main>
-
+            <a href="https://www.npmjs.com/package/react-confetti" className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600">
+              <h2>Learn more &rarr;</h2>
+              <p>This wbsite uses React Confetti on Next.js !</p>
+            </a>
+          </div>
+        </main>
       <Footer />
-    </div>
+      </div>
+    </>
   );
 };
 

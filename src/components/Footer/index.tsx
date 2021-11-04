@@ -1,11 +1,10 @@
-import styles from "@/styles/Footer.module.css";
 import Link from "next/link";
 
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <Link href="https://alphaolomi.com">
-        <a rel="noopener noreferrer" target="_blank">
+    <footer className="flex items-center justify-center w-full h-24 border-t">
+      <Link href="https://github.com/alphaolomi">
+        <a rel="noopener noreferrer" target="_blank" className="flex items-center justify-center">
           Made with 💖 by Alpha Olomi
         </a>
       </Link>
