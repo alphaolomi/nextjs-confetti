@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.0.3",
+    "next": "12.0.4",
     "react": "17.0.2",
     "react-confetti": "6.0.1",
     "react-dom": "17.0.2",
@@ -18,12 +18,12 @@
     "react-use": "17.3.1"
   },
   "devDependencies": {
-    "@types/react": "17.0.34",
+    "@types/react": "17.0.36",
     "autoprefixer": "^10.4.0",
     "postcss": "^8.3.11",
     "tailwindcss": "^2.2.19",
-    "eslint": "8.2.0",
-    "eslint-config-next": "12.0.3",
-    "typescript": "4.4.4"
+    "eslint": "8.3.0",
+    "eslint-config-next": "12.0.4",
+    "typescript": "4.5.2"
   }
 }
